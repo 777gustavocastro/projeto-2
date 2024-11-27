@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Status - Empresas</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            background: #212437;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff007a;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .status-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+        }
+
+        .status-table th, .status-table td {
+            padding: 15px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .status-table th {
+            color: #a3a3ff;
+            text-transform: uppercase;
+        }
+
+        .status-table tbody tr {
+            background: #2b2e4a;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .status-table td {
+            position: relative;
+            color: #e0e0e0;
+        }
+
+        .status-table img {
+            width: 40px;
+            height: auto;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background-color: #2f3247;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-bar div {
+            height: 100%;
+            background: linear-gradient(90deg, #ff007a, #8e44ad);
+            border-radius: 6px;
+            animation: progressAnimation 1.5s ease-in-out;
+        }
+
+        @keyframes progressAnimation {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .status-circle {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-circle.green {
+            background: #00ff85;
+            box-shadow: 0 0 10px #00ff85;
+        }
+
+        .status-circle.red {
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        .button-link {
+            text-decoration: none;
+            background: linear-gradient(90deg, #00d4ff, #004cff);
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #00d4ff;
+        }
+
+        /* Tabelas dinâmicas */
+        tbody tr:hover {
+            transform: scale(1.01);
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Status</h1>
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th>Logotipo</th>
+                    <th>Nome</th>
+                    <th>Bandeira</th>
+                    <th>Status</th>
+                    <th>Faturamento</th>
+                    <th>Site Oficial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tbody>
+    <!-- Apple -->
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo"></td>
+        <td>Apple</td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EUA"></td>
+        <td><span class="status-circle green"></span> Ativo</td>
+        <td>
+            <div class="progress-bar">
+                <div style="width: 85%;"></div>
+            </div>
+            85%
+        </td>
+        <td><a href="https://www.apple.com" class="button-link">Visitar</a></td>
+    </tr>
+    <!-- Google -->
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"></td>
+        <td>Google (Alphabet)</td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EUA"></td>
+        <td><span class="status-circle green"></span> Ativo</td>
+        <td>
+            <div class="progress-bar">
+                <div style="width: 90%;"></div>
+            </div>
+            90%
+        </td>
+        <td><a href="https://www.abc.xyz" class="button-link">Visitar</a></td>
+    </tr>
+    <!-- Microsoft -->
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo"></td>
+        <td>Microsoft</td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EUA"></td>
+        <td><span class="status-circle green"></span> Ativo</td>
+        <td>
+            <div class="progress-bar">
+                <div style="width: 75%;"></div>
+            </div>
+            75%
+        </td>
+        <td><a href="https://www.microsoft.com" class="button-link">Visitar</a></td>
+    </tr>
+    <!-- Amazon -->
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo"></td>
+        <td>Amazon</td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EUA"></td>
+        <td><span class="status-circle green"></span> Ativo</td>
+        <td>
+            <div class="progress-bar">
+                <div style="width: 80%;"></div>
+            </div>
+            80%
+        </td>
+        <td><a href="https://www.amazon.com" class="button-link">Visitar</a></td>
+    </tr>
+    <!-- Tesla -->
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" alt="Tesla Logo"></td>
+        <td>Tesla</td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EUA"></td>
+        <td><span class="status-circle green"></span> Ativo</td>
+        <td>
+            <div class="progress-bar">
+                <div style="width: 85%;"></div>
+            </div>
+            85%
+        </td>
+        <td><a href="https://www.tesla.com" class="button-link">Visitar</a></td>
+    </tr>
+    <!-- Samsung -->
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung Logo"></td>
+        <td>Samsung</td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Coreia do Sul"></td>
+        <td><span class="status-circle green"></span> Ativo</td>
+        <td>
+            <div class="progress-bar">
+                <div style="width: 78%;"></div>
+            </div>
+            78%
+        </td>
+        <td><a href="https://www.samsung.com" class="button-link">Visitar</a></td>
+    </tr>
+    <!-- BMW -->
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo"></td>
+        <td>BMW</td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Alemanha"></td>
+        <td><span class="status-circle green"></span> Ativo</td>
+        <td>
+            <div class="progress-bar">
+                <div style="width: 75%;"></div>
+            </div>
+            75%
+        </td>
+        <td><a href="https://www.bmw.com" class="button-link">Visitar</a></td>
+    </tr>
+</tbody>
+</html>
